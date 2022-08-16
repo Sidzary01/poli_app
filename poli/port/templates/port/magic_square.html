@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block square %}
+    <p>Задумайте любое двухзначное число</p>
+    <p>Вычтите из него составляющие его цифры.</p>
+    <p>Найдите это число в таблице и символ, которому оно соответствует.</p>
+    <p>Вообразите мысленно себе этот символ.</p>
+    <p>Щелкните на кнопку.</p>
+
+    {% for item in arr_square %}
+        <nobr>({{forloop.counter0}}-{{item}})</nobr>
+        {% if forloop.counter0 in set_endl %}
+            <br>
+        {% endif %}
+    {% endfor %}
+    <br>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ваш символ
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">{{symbol}}</a>
+        </div>
+      </div>
+
+{% endblock %}

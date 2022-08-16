@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block statistics %}
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Last_Name</th>
+                <th>Group</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in students %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.last_name }}</td>
+                    <td>{{ item.group }}</td>
+                    <td>{{ item.age }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

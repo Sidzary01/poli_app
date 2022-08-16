@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block progress %}
+<h1>All Students Progress</h1>
+<br>
+
+
+{% for item in students %}
+    <h3>{{ item.name }} {{ item.last_name }}</h3>
+    <div class="progress" style="height: 20px;">
+        <div class="progress-bar" role="progressbar" aria-label="Example 20px high" style="width: {{item.all_score}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{item.all_score}} %</div>
+    </div>
+    <br>
+    <div class="progress">
+        <div class="progress-bar bg-info" role="progressbar" aria-label="Info example" style="width: {{ item.math_score }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> Math {{ item.math_score }}</div>
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar bg-info" role="progressbar" aria-label="Info example" style="width: {{ item.physics_score }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> Physics {{ item.physics_score }}</div>
+    </div>
+ 
+    <div class="progress">
+        <div class="progress-bar bg-danger" role="progressbar" aria-label="Danger example" style="width: {{ item.history_score }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">History {{ item.history_score }}</div>
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar bg-danger" role="progressbar" aria-label="Danger example" style="width: {{ item.geography_score }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Geography {{ item.geography_score }}</div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" aria-label="Success example" style="width: {{ item.biology_score }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Biology {{ item.biology_score }}</div>
+    </div>
+    <br>
+    <br>
+    
+
+{% endfor %}
+
+
+{% endblock %}
